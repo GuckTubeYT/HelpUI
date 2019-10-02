@@ -60,7 +60,7 @@ class Main extends PluginBase implements Listener
 
     public function mainFrom($sender)
     {
-        $form = new SimpleForm(function (Player $player, $data) { // Create UI
+        $form = new SimpleForm(function (Player $player, $data) {
             $result = $data;
             if ($result === null) {
                 return true;

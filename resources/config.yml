@@ -2,6 +2,8 @@
 # Config for HelpUI
 # Use \n to go in a new line
 
+Console-Run-Message: "§cPlease use this command in game!"
+
 Title: "§b§lHelpUI"
 Text: "Edit all texts in config.yml!"
 Button: "Close"

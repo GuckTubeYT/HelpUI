@@ -1,7 +1,7 @@
 <?php
 
-# (c) 2019 Mineexpert0990 / dev0990
-# Do not be surprised Mineexpert0990 is my Minecraft account, dev0990 is my coding account xd
+# (c) 2019 WaxierBand5235 / dev0990
+# Do not be surprised WaxierBand5235 is my Minecraft account, dev0990 is my coding account
 # This plugin may NOT be recoded or published as own!!!
 # YouTube videos with download links are very welcome :D
 
@@ -24,18 +24,23 @@ class Main extends PluginBase implements Listener
 {
     public function onEnable()
     {
+        $this->FormAPI = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
+        if(!$this->FormAPI or $this->FormAPI->isDisabled()){
+        $this->getLogger()->warning("§cPlugin FormAPI not found, disabling HelpUI by dev0990...");
+        $this->getPluginLoader()->disablePlugin($this);
+        }
+        $this->getLogger()->info("§aHelpUI by dev0990 enabled!");
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getLogger()->info("§aHelpUI by dev0990 enabled!"); // Message on enable
     }
 
     public function onDisable()
     {
-        $this->getLogger()->info("§cHelpUI by dev0990 disabled!"); // Message on disable
+        $this->getLogger()->info("§cHelpUI by dev0990 disabled!");
     }
 
     public function onLoad()
     {
-        $this->getLogger()->info("§7Loading HelpUI by dev0990..."); // Message on load
+        $this->getLogger()->info("§7Loading HelpUI by dev0990...");
     }
 
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool
@@ -43,7 +48,7 @@ class Main extends PluginBase implements Listener
         switch ($cmd->getName()) {
             case "helpui":
                 if (!$sender instanceof Player) {
-                    $sender->sendMessage("Use this command in game"); // Vllt soon in Config
+                    $sender->sendMessage($this->getConfig()->get("Console-Run-Message"));
                     return false;
                 }
                 if ($sender instanceof Player) {
@@ -66,9 +71,9 @@ class Main extends PluginBase implements Listener
                     break;
             }
         });
-        $form->setTitle($this->getConfig()->get("Title")); // The title of the ui
-        $form->setContent($this->getConfig()->get("Text")); // the help commands of the ui
-        $form->addButton($this->getConfig()->get("Button")); // and the "close" button
+        $form->setTitle($this->getConfig()->get("Title"));
+        $form->setContent($this->getConfig()->get("Text"));
+        $form->addButton($this->getConfig()->get("Button"));
         $form->sendToPlayer($sender);
         return $form;
     }

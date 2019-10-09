@@ -27,6 +27,7 @@ class Main extends PluginBase implements Listener
         $this->FormAPI = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
         if(!$this->FormAPI or $this->FormAPI->isDisabled()){
         $this->getLogger()->warning("§cPlugin FormAPI not found, disabling HelpUI by dev0990...");
+        $this->getLOgger()->warning("§ePlease install FormAPI.");
         }
         $this->getLogger()->info("§aHelpUI by dev0990 enabled!");
         $this->getServer()->getPluginManager()->registerEvents($this, $this);

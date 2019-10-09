@@ -1,10 +1,9 @@
 ---
 name: HelpUI
-version: 1.0
+version: 1.1
 api: [3.0.0, 4.0.0]
 main: dev0990\Main
 description: A PocketMine-MP Plugin by dev0990
-load: POSTWORLD
 author: dev0990
 commands:
    helpui:

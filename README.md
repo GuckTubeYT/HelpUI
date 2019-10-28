@@ -13,9 +13,14 @@ https://poggit.pmmp.io/ci/jojoe77777/FormAPI/FormAPI
 
 # Commands:
 
-/helpui
+/hui
+/hversion
+/habout
+
 
 # Description:
 
 Get a list of all commands
+Get the version of HelpUI
+About HelpUI
 

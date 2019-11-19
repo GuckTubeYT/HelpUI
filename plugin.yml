@@ -1,12 +1,12 @@
 ---
 name: HelpUI
-version: 1.0.2
+version: 2.0
 api: [3.0.0, 4.0.0]
 main: dev0990\Main
 description: A PocketMine-MP & Altay Plugin by dev0990
 author: dev0990
 commands:
-   hui:
+   hopen:
      description: Get a list of all commands
    hversion:
      description: Get the version of HelpUI

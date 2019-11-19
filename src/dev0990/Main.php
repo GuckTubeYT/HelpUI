@@ -46,11 +46,22 @@ class Main extends PluginBase implements Listener
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool
     {
         switch ($cmd->getName()) {
-            case "helpui":
+            case "hopen":
                 if (!$sender instanceof Player) {
                     $sender->sendMessage($this->getConfig()->get("Console-Run-Message"));
                     return false;
                 }
+                
+                if($cmd->getName() == "hversion") {
+                    $sender->sendMessage("§eHelpUI v2 §7» §l§b/habout");
+                    return false;
+                }
+                
+                if($cmd->getName() == "habout") {
+                    $sender->sendMessage("§eHelpUI by dev0990 v2\n\nMy Server:\n§7skillgames.nbb.one\n§719132 (Main Port)");
+                    return false;
+                }
+                
                 if ($sender instanceof Player) {
                     $this->mainFrom($sender);
                 }
